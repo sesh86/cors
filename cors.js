@@ -1,8 +1,10 @@
 // const _app=require('./config.js')
 const express=require('express')
 const jwt = require('jsonwebtoken');
+const cors= require('cors');
 
 app=express();
+app.use(cors())
 
 app.get('/',(req,res)=>{
     var user={id:1,user:'sesh'}
@@ -19,6 +21,6 @@ app.get('/',(req,res)=>{
     }
     res.send(decoded);
   })  
-  app.listen(process.env.PORT||3000);
+  app.listen(process.env.PORT||3001);
 
   console.log('Application is running on http://localhost:'+ 3000);  
